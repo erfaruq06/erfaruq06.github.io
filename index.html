@@ -12,15 +12,21 @@
 
 		@media only screen and (max-width: 600px) {
 		  body {
-		    background-image: url("bg.jpg");
 		  	background-repeat: no-repeat; /* Do not repeat the image */
 		  	background-size: cover; /* Resize the background image to cover the entire container */
-		    font-family: "Lucida Console", "Courier New", monospace;
+		    font-family: "Verdana", Sans-serif;
 		  }
+
+		  #myVideo {
+			  position: fixed;
+			  right: 0;
+			  bottom: 0;
+			  width: 100%
+			}
 
 		  .love {
 		  	padding: 10px;
-		  	font-family: "Lucida Console", "Courier New", monospace;
+		  	font-family: Verdana, Sans-serif;
 		  	border: 0px;
 		  	color: white;
 		  	border-radius: 5px;
@@ -37,6 +43,8 @@
 		  	padding: 15px;
 		  	border-radius: 5px;
 		  	display: none;
+		  	color: #ffffff;
+		  	/*font-weight: bold;*/
 		  }
 
 		  #saya {
@@ -57,19 +65,24 @@
 		  }
 
 		  #messageYakin {
-		  	background-color: #63dc7859;
+		  	background-color: #19b5349c;
 		  }
 
 		  #messageRagu {
-		  	background-color: #d0da2d59
+		  	background-color: #d0da2dba
 		  }
 
 		  #messageTidak {
-		  	background-color: #da2d2d59;
+		  	background-color: #da2d2db3;
 		  }
 
 		  .open {
 		  	margin-top: 30px
+		  }
+
+		  #content {
+		  	  position: fixed;
+			  width: 100%;
 		  }
 
 
@@ -77,36 +90,40 @@
 		</style>
 	</head>
 	<body>
-
-		<div class="open">
-			<span><small>Frekuensimu dengan</small> <mark id="saya">Rahman Faruq</mark></span>
-			<div>
-				<button class="love" id="yakin">Ya, Yakin</button>
-				<button class="love" id="ragu">Masih Ragu</button>
-				<button class="love" id="tidak">Gak Mau</button>	
+		<video autoplay muted loop id="myVideo">
+		  <source src="video.mp4" type="video/mp4">
+		</video>
+		<div id="content">
+			<div class="open">
+				<span><small>Frekuensimu dengan</small> <mark id="saya">Rahman Faruq</mark></span>
+				<div>
+					<button class="love" id="yakin">Ya, Yakin</button>
+					<button class="love" id="ragu">Masih Ragu</button>
+					<button class="love" id="tidak">Gak Mau</button>	
+				</div>
+				
 			</div>
-			
-		</div>
 
-		<div class="message" id="messageYakin">
-			Selamat malam, Fitri Anisa... <br> <br>
-			Terima kasih banyak telah yakin.... <br>
-			Saya mohon maaf juga ya, telah memaksa kamu masuk dalam hidup saya.... <br>
-			Dan saya tak bisa berjanji banyak kecuali saya tidak akan menyia-nyiakan kesempatan ini.... <br><br><br>
+			<div class="message" id="messageYakin">
+				Selamat malam, Fitri Anisa... <br> <br>
+				Terima kasih banyak telah yakin.... <br>
+				Saya mohon maaf juga ya, telah memaksa kamu masuk dalam hidup saya.... <br>
+				Dan saya tak bisa berjanji banyak kecuali saya tidak akan menyia-nyiakan kesempatan ini.... <br><br><br>
 
-			Terima kasih banyak..........
-		</div>
+				Terima kasih banyak..........
+			</div>
 
-		<div id="messageRagu" class="message">
-			Selamat malam, Fitri Anisa... <br> <br>
-			Saya memaklumi jika kamu masih ragu.... <br>
-			Berikan saya waktu ya untuk meyakinkanmu.....
-		</div>
+			<div id="messageRagu" class="message">
+				Selamat malam, Fitri Anisa... <br> <br>
+				Saya memaklumi jika kamu masih ragu.... <br>
+				Berikan saya waktu ya untuk meyakinkanmu.....
+			</div>
 
-		<div id="messageTidak" class="message">
-			Selamat malam, Fitri Anisa... <br> <br>
-			Sedih sih dengernya.... <br>
-			Tapi saya harus sadar diri, bahwa hati tak boleh dipaksa dan memaksa...
+			<div id="messageTidak" class="message">
+				Selamat malam, Fitri Anisa... <br> <br>
+				Sedih sih dengernya.... <br>
+				Tapi saya harus sadar diri, bahwa hati tak boleh dipaksa dan memaksa...
+			</div>
 		</div>
 
 		<script type="text/javascript" ></script>
