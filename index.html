@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<title>Hai Fitri Anisa</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<style>
@@ -17,24 +18,22 @@
 		    font-family: "Lucida Console", "Courier New", monospace;
 		  }
 
-		  #love {
+		  .love {
 		  	padding: 10px;
 		  	font-family: "Lucida Console", "Courier New", monospace;
 		  	border: 0px;
 		  	color: white;
-		  	background-color: #188220;
 		  	border-radius: 5px;
 		  	margin-top: 15px;
-		  	display: block;	
+		  	display: inline-block;	
 		  }
 
 		  #gue {
 		  	color: red
 		  }
 
-		  #message {
+		  .message {
 		  	margin-top: 15px;
-		  	background-color: #bff3c8;
 		  	padding: 15px;
 		  	border-radius: 5px;
 		  	display: none;
@@ -44,30 +43,98 @@
 		  	background-color: #0a4a12;
 		  	color: white;
 		  }
+
+		  #yakin {
+		  	background-color: #188220;
+		  }
+
+		  #ragu {
+		  	background-color: #d0ca1c;
+		  }
+
+		  #tidak {
+		  	background-color: #d01c2d;
+		  }
+
+		  #messageYakin {
+		  	background-color: #63dc7859;
+		  }
+
+		  #messageRagu {
+		  	background-color: #d0da2d59
+		  }
+
+		  #messageTidak {
+		  	background-color: #da2d2d59;
+		  }
+
+		  .open {
+		  	margin-top: 30px
+		  }
+
+
 		}
 		</style>
 	</head>
 	<body>
 
 		<div class="open">
-			<span><small>Klik tombol jika kamu sefrekuesi dengan</small> <mark id="saya">Rahman Faruq</mark></span>
-			<button id="love">Ya, Yakin...</button>
+			<span><small>Frekuensimu dengan</small> <mark id="saya">Rahman Faruq</mark></span>
+			<div>
+				<button class="love" id="yakin">Ya, Yakin</button>
+				<button class="love" id="ragu">Masih Ragu</button>
+				<button class="love" id="tidak">Gak Mau</button>	
+			</div>
+			
 		</div>
 
-		<div id="message">
+		<div class="message" id="messageYakin">
 			Selamat malam, Fitri Anisa... <br> <br>
-			Terima kasih telah yakin.... <br>
-			Saya mohon maaf ya, telah memaksa kamu masuk dalam hidup saya....
+			Terima kasih banyak telah yakin.... <br>
+			Saya mohon maaf juga ya, telah memaksa kamu masuk dalam hidup saya.... <br>
+			Dan saya tak bisa berjanji banyak kecuali saya tidak akan menyia-nyiakan kesempatan ini.... <br><br><br>
+
+			Terima kasih banyak..........
 		</div>
+
+		<div id="messageRagu" class="message">
+			Selamat malam, Fitri Anisa... <br> <br>
+			Saya memaklumi jika kamu masih ragu.... <br>
+			Berikan saya waktu ya untuk meyakinkanmu.....
+		</div>
+
+		<div id="messageTidak" class="message">
+			Selamat malam, Fitri Anisa... <br> <br>
+			Sedih sih dengernya.... <br>
+			Tapi saya harus sadar diri, bahwa hati tak boleh dipaksa dan memaksa...
+		</div>
+
+		<script type="text/javascript" ></script>
 
 		<script type="text/javascript">
-			const tombol = document.getElementById('love')
+			const yakin = $('#yakin');
+			const ragu = $('#ragu');
+			const tidak = $('#tidak');
 
-			tombol.addEventListener('click', function () {
-				// const et = e.target
-				const pesan  = document.getElementById('message')
-				pesan.style.display = "block"
+			yakin.on('click', function () {
+				$('#messageYakin').slideDown()
+				ragu.hide()
+				tidak.hide()
 			})
+
+			ragu.on('click', function () {
+				$('#messageRagu').slideDown()
+				yakin.hide()
+				tidak.hide()
+			})
+
+			tidak.on('click', function () {
+				$('#messageTidak').slideDown()
+				yakin.hide()
+				ragu.hide()
+			})
+
+			
 		</script>
 	</body>
 </html>
