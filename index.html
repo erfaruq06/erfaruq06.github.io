@@ -1,9 +1,71 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Greeting Fitri</title>
+		<title>Hai Fitri Anisa</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+		body {
+		  background-color: lightgreen;
+		  font-family: "Lucida Console", "Courier New", monospace;
+		}
+
+		@media only screen and (max-width: 600px) {
+		  body {
+		    background-color: #c2bdca40;
+		    font-family: "Lucida Console", "Courier New", monospace;
+		  }
+
+		  #love {
+		  	padding: 10px;
+		  	font-family: "Lucida Console", "Courier New", monospace;
+		  	border: 0px;
+		  	color: white;
+		  	background-color: #188220;
+		  	border-radius: 5px;
+		  	margin-top: 15px;
+		  	display: block;	
+		  }
+
+		  #gue {
+		  	color: red
+		  }
+
+		  #message {
+		  	margin-top: 15px;
+		  	background-color: #bff3c8;
+		  	padding: 15px;
+		  	border-radius: 5px;
+		  	display: none;
+		  }
+
+		  #saya {
+		  	background-color: #0a4a12;
+		  	color: white;
+		  }
+		}
+		</style>
 	</head>
 	<body>
-		<marquee><h1>Selamat Sore, Fitri Anisa!!</h1></marquee>
+
+		<div class="open">
+			<span><small>Klik tombol jika kamu sefrekuesi dengan</small> <mark id="saya">Rahman Faruq</mark></span>
+			<button id="love">Ya, Yakin...</button>
+		</div>
+
+		<div id="message">
+			Selamat sore, Fitri Anisa... <br> <br>
+			Terima kasih telah yakin.... <br>
+			Saya mohon maaf ya, telah memaksa kamu masuk dalam hidup saya....
+		</div>
+
+		<script type="text/javascript">
+			const tombol = document.getElementById('love')
+
+			tombol.addEventListener('click', function () {
+				// const et = e.target
+				const pesan  = document.getElementById('message')
+				pesan.style.display = "block"
+			})
+		</script>
 	</body>
 </html>
